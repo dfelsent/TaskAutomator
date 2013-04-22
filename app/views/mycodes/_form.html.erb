@@ -1,0 +1,63 @@
+<%= form_for(@mycode) do |f| %>
+  <% if @mycode.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mycode.errors.count, "error") %> prohibited this mycode from being saved:</h2>
+
+      <ul>
+      <% @mycode.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Podcast title' %><br />
+    <%= f.text_area :podtitle, :size => '100'  %>
+  </div>
+  <div class="field">
+    <%= f.label 'Podcast author' %><br />
+    <%= f.text_field :speaker, :size => '55' %>
+  </div>
+  <div class="field">
+    <%= f.label 'Wimpy code' %><br />
+    <%= f.text_area :wimpy, :size => '100' %>
+  </div>
+  <div class="field">
+    <%= f.label 'Direct link to podcast' %><br />
+    <%= f.text_area :podlink, :size => '100' %>
+  </div>
+  <div class="field">
+    <%= f.label :duration %><br />
+    <%= f.time_select :duration, :include_seconds => true %>
+  </div>
+  <div class="field">
+    <%= f.label 'Size in megabytes' %><br />
+    <%= f.text_field :mbsize %>
+  <div class="field">    
+    <%= f.label 'Size in bytes' %><br />
+    <%= f.number_field :bytesize %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label 'Link to original article abstract' %><br />
+    <%= f.text_area :artlink, :size => '100' %>
+  </div>
+  <div class="field">
+    <%= f.label 'Article author' %><br />
+    <%= f.text_field :artauthor, :size => '55' %>
+  <div class="field">
+    <%= f.label 'Description' %><br />
+    <%= f.text_area :description, :size => '100' %>
+  </div>
+  <div class="field">
+    <%= f.label 'Keywords' %><br />
+    <%= f.text_area :keywords, :size => '100' %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Generate Podcast Code"%>
+  </div>
+<% end %>

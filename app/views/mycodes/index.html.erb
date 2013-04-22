@@ -1,0 +1,37 @@
+<h1>Listing mycodes</h1>
+
+<table>
+  <tr>
+    <th>Podtitle</th>
+    <th>Speaker</th>
+    <th>Wimpy</th>
+    <th>Podlink</th>
+    <th>Duration</th>
+    <th>Mbsize</th>
+    <th>Date</th>
+    <th>Artlink</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mycodes.each do |mycode| %>
+  <tr>
+    <td><%= mycode.podtitle %></td>
+    <td><%= mycode.speaker %></td>
+    <td><%= mycode.wimpy %></td>
+    <td><%= mycode.podlink %></td>
+    <td><%= mycode.duration %></td>
+    <td><%= mycode.mbsize %></td>
+    <td><%= mycode.date %></td>
+    <td><%= mycode.artlink %></td>
+    <td><%= link_to 'Show', mycode %></td>
+    <td><%= link_to 'Edit', edit_mycode_path(mycode) %></td>
+    <td><%= link_to 'Destroy', mycode, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mycode', new_mycode_path %>

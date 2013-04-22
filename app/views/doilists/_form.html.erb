@@ -1,0 +1,50 @@
+<%= form_for(@doilist) do |f| %>
+  <% if @doilist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@doilist.errors.count, "error") %> prohibited this doilist from being saved:
+      </h2>
+
+      <ul>
+      <% @doilist.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+ <div class="field">
+   <%= f.label 'Email' %><br />
+    <%= f.text_field :myuserid, :placeholder => "ASCO email address"  %>
+  </div>
+ 
+  <div class="field">
+   <%= f.label 'Password' %><br />
+    <%= f.password_field :mypass, :placeholder => "Benchpress password" %>
+  </div>
+ 
+  <div class="field">
+    <%= f.label(:mylist, t('DOI list')) %><br />
+    <%= f.text_area :mylist, :placeholder => "Paste in the list of DOIs delivered to HWX from Cadmus' email. There is no need to edit the list. The items should be separated by spaces or new lines, but there should be nothing added to the end of each item (such as commas)." %>
+  </div>
+ 
+ <div class="field">
+    <%= f.label 'Numeric Month' %><br />
+    <%= f.number_field :mymonth,  :placeholder => "ex: 4 for April 5th" %>
+  </div>
+  
+   <div class="field">
+    <%= f.label 'Numeric Date' %><br />
+    <%= f.number_field :mydate, :placeholder => "ex: 5 for April 5th" %>
+  </div>
+    
+     <div class="field">
+    <%= f.label 'Numeric Year' %><br />
+    <em>1 for the current year, 2 for the following year</em><br>
+    <%= f.number_field :myyear %>
+    </div>
+  
+  <div class="actions">
+   <%= f.submit "Submit Your Entry to Benchpress"%>
+  </div>
+
+<% end %>

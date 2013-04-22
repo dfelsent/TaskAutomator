@@ -1,0 +1,37 @@
+<%= form_for(@vol) do |f| %>
+  <% if @vol.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vol.errors.count, "error") %> prohibited this vol from being saved:</h2>
+
+      <ul>
+      <% @vol.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="field">
+   <%= f.label 'username' %><br />
+    <%= f.text_field :myuserid, :placeholder => "ASCO email address" %>
+  </div>
+  <div class="field">
+   <%= f.label 'Password' %><br />
+    <%= f.password_field :mypass, :placeholder => "Benchpress password" %>
+  </div>
+  <div class="field">
+    <%= f.label(:mylist, t('DOI list')) %><br />
+    <%= f.text_area :mylist, :placeholder => "Paste in the list of DOIs to be updated. The items should be separated by spaces or new lines, but there should be nothing added to the end of each item (such as commas)." %>
+
+  <div class="field">
+    <%= f.label :volume %><br />
+    <%= f.number_field :volume, :placeholder => "ex: 31" %>
+  </div>
+  <div class="field">
+    <%= f.label :issue %><br />
+    <%= f.number_field :issue, :placeholder => "ex: 12" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit Your Entry to Benchpress"%>
+  </div>
+<% end %>

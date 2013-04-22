@@ -1,0 +1,24 @@
+<%= "
+
+       <tr>
+						<td rowspan=\"1\" valign=\"left\" width=\"63\">
+							<br />
+							<a href=\"/site/podcasts/index.xhtml\"><img src=\"/site/misc/images/jco-itunes-item-icon-sm.jpg\" /></a></td>
+						<td width=\"620\">
+							<br />
+							<strong>#{@mycode.podtitle}</strong><br />
+							<em>By #{@mycode.speaker}</em>&nbsp;<font size=\"1\"><strong> <a href=\"/site/podcasts/podcast-no-coi.xhtml\">[Disclosures]</a></strong></font><br />
+							Posted #{@mycode.date.strftime('%B %d, %Y')}</td>
+					</tr>
+					<tr>
+						<td colspan=\"2\">
+											<!-- START WIMPY PLAYER CODE -->
+#{@mycode.wimpy}
+
+<!-- END WIMPY PLAYER CODE --> <br />
+							<sub>(<a href=\"#{@mycode.podlink}\">Download file</a> - duration #{@mycode.duration.strftime('%X')}, file size #{@mycode.mbsize} MB)</sub><br />
+							<br />
+							<b>#{@mycode.artauthor} <a href=\"#{@mycode.artlink}\">[Abstract]</a></b></td>
+					</tr>
+
+					"  %>

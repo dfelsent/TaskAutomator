@@ -1,0 +1,4 @@
+require 'test_helper'
+
+class DoilistsHelperTest < ActionView::TestCase
+end

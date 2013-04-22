@@ -1,0 +1,23 @@
+<%= "
+
+<tr>
+          <td>
+            <center>
+              <br />
+              <img alt=\"jco-itunes-icon\" src=\"http://jco.ascopubs.org/site/podcasts/archive/jco-itunes-item-icon-sm.jpg\" /><br />
+              #{@mycode.date.strftime('%B %d, %Y')}</center>
+          </td>
+          <td>
+            <strong>#{@mycode.podtitle}</strong><br />
+            <br />
+            <em>By #{@mycode.speaker}</em><br />
+            <br />
+
+#{@mycode.wimpy}</object>
+
+            <br />
+            <br />
+            <sup>(<a href=\"#{@mycode.podlink}\">Download file</a> - duration #{@mycode.duration.strftime('%X')}, file size #{@mycode.mbsize} MB)</sup></td>
+          <td>
+            #{@mycode.artauthor} <a href=\"#{@mycode.artlink}\">[Abstract]</a></td>
+        </tr>"     %> 
