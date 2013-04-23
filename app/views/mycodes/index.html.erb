@@ -1,6 +1,15 @@
 <h1>Listing mycodes</h1>
 
 <table>
+<% @mycodes.each do |mycode| %>
+    <tr>
+<td><%= mycode.podtitle %></td>
+<td><%= link_to 'Show', mycode %></td>
+    </tr>
+    <% end %>
+</table>
+
+<table>
   <tr>
     <th>Podtitle</th>
     <th>Speaker</th>

@@ -1,9 +1,7 @@
 class MycodesController < ApplicationController
   # GET /mycodes
   # GET /mycodes.json
-  attr_accessor :mymbsize
-  attr_accessor :bytesize
-
+ 
 
   def index
     @mycodes = Mycode.all

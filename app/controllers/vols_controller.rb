@@ -63,7 +63,7 @@ page = a.submit(myform, myform.buttons.first)
 
 mylistarray = @vol.mylist.strip.split(/[\s]+/)
 
-mylistfinal = mylistarray.map{|l| l.sub(/(.*)\./,'\1').gsub('.','/')}.uniq
+mylistfinal = mylistarray.map{|l| l}.uniq
 
 mylistfinal.each do |doi|
     url ='http://submit.jco.org/tracking/msedit?msid=' + doi + '&roleName=staff_thirteen&msedit=prod_info'
