@@ -1,8 +1,5 @@
 Bptest::Application.routes.draw do
 
-  resources :homerights
-
-
 resources :start 
   resources :vols, :path => "VolumeIssue"
   resources :doilists, :path => "EmbargoPaP"

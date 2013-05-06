@@ -1,8 +1,7 @@
+require 'delayed_job'
 class DoilistsController < ApplicationController
   # GET /doilists
   # GET /doilists.json
-
-
 
   def index
     @doilists = Doilist.all
@@ -37,17 +36,32 @@ class DoilistsController < ApplicationController
 
   # GET /doilists/1/edit
   
-
   # POST /doilists
   # POST /doilists.json
   def create
     @doilist = Doilist.new(params[:doilist])
   
-  @doilist.scrape
+  #@doilist.delay.scrape
     #webscraper = Webscraper.new
     #webscraper.perform(@doilist)
- 
-    redirect_to start_index_path, :notice => 'Your form was succesfully submitted!'
-  end
- 
+    #respond_to do |format|
+      if @doilist.save
+        #flash[:notice] = "Successfully submitted your entry."
+        @doilist.delay.scrape 
+        flash[:notice] = "Currently sending your info"
+        redirect_to start_index_path 
+        #redirect_to start_index_path, flash[:notice] => 'Your form was succesfully submitted!'
+        #redirect_to waitforit
+
+       # Delayed::Job.enqueue(ScrapeJob.new(params[:id]))
+        #@doilist.delay.scrape
+        #format.html { redirect_to @doilist, notice: 'Your form was successfully submitted!' }
+       # format.json { render json: @doilist, status: :created, location: @doilist }
+      else
+        render :action => 'new'
+        format.html { render action: "new" }
+        format.json { render json: @doilist.errors, status: :unprocessable_entity }
+  
+      end
+    end
 end

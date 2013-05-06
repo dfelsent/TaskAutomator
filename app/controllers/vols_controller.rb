@@ -1,8 +1,7 @@
+require 'delayed_job'
 class VolsController < ApplicationController
   # GET /doilists
   # GET /doilists.json
-
-
 
   def index
     @vols = Vol.all
@@ -42,46 +41,23 @@ class VolsController < ApplicationController
   # POST /doilists.json
   def create
     @vol = Vol.new(params[:vol])
-  
-  a = Mechanize.new { |agent|
-  agent.open_timeout   = 60
-  agent.read_timeout   = 60
-  }
 
-page = a.get('http://submit.jco.org/')
+    if @vol.save
+        #flash[:notice] = "Successfully submitted your entry."
+        @vol.delay.scrape 
+        flash[:notice] = "Submitting your info to Benchpress"
+        redirect_to start_index_path 
+        #redirect_to start_index_path, flash[:notice] => 'Your form was succesfully submitted!'
+        #redirect_to waitforit
 
-myform = page.form_with(:name => 'signinForm')
-
-myuserid_field = myform.field_with(:name => "MSTRServlet.emailAddr")
-myuserid_field.value = @vol.myuserid  
-mypass_field = myform.field_with(:name => "MSTRServlet.password")
-mypass_field.value = @vol.mypass 
-
-myform.checkbox_with(:name => 'remember_me').check
-
-page = a.submit(myform, myform.buttons.first)
-
-mylistarray = @vol.mylist.strip.split(/[\s]+/)
-
-mylistfinal = mylistarray.map{|l| l}.uniq
-
-mylistfinal.each do |doi|
-    url ='http://submit.jco.org/tracking/msedit?msid=' + doi + '&roleName=staff_thirteen&msedit=prod_info'
-    page = a.get("http://submit.jco.org/submission/queues")
-    page = a.get("#{url}") 
-
-    entryform = page.form_with(:name => 'submitManuscript') 
-
-    entryform.field_with(:name => 'assign_to_volume').value = @vol.volume
-    entryform.field_with(:name => 'assign_to_issue').value = @vol.issue
-
-
-    page = a.submit(entryform, entryform.button_with(:name => 'CA_continue'))
-
-end
-redirect_to start_index_path, :notice => 'Your form was succesfully submitted!'
-
-end 
-
- 
+       # Delayed::Job.enqueue(ScrapeJob.new(params[:id]))
+        #@doilist.delay.scrape
+        #format.html { redirect_to @doilist, notice: 'Your form was successfully submitted!' }
+       # format.json { render json: @doilist, status: :created, location: @doilist }
+      else
+        render :action => 'new'
+        format.html { render action: "new" }
+        format.json { render json: @vol.errors, status: :unprocessable_entity }
+      end
+  end
 end
