@@ -34,7 +34,7 @@ gem 'delayed_job_active_record'
 
 gem 'daemons'
 
-gem 'thin'
+gem 'unicorn'
 
 
 # To use ActiveModel has_secure_password
