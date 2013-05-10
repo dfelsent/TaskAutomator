@@ -1,40 +1,47 @@
-<%= link_to 'Edit Input', edit_mycode_path(@mycode) %> |
-<%= link_to 'Home Page', start_index_path %>
-
+<br>
+<div align="center">
 <p id="notice"><%= notice %></p>
 
-<h2>Here is your code:</h2>
-
+<h2>Your Podcast Code:</h2>
+<%= link_to 'Edit this code', edit_mycode_path(@mycode) %> |
+<%= link_to 'New code', new_mycode_path %> |
+<%= link_to 'Index Page', mycodes_path %> | <%= link_to 'Journals Home Page', start_index_path %>
 
 <h3>Podcast Data Supplement</h3>
+</div>
 
 <%=  render 'datasupp'   %>     
 
 <br />
 <br />
 
-<h3>Podcast Index and Archive Pages</h3>
+<h3 align="center">Podcast Index and Archive Pages</h3>
 
 <%=  render 'archiveandindexpage' %>
 
 <br />
 <br />
 
-<h3>Info for FeedForAll</h3>
+<h3 align="center">Info for FeedForAll</h3>
 
 <%= render 'feedforall' %>
 
 <br />
 
-<h3>Issue Podcast Box</h3>
+<h3 align="center">Issue Home-right Podcast Box</h3>
 
 <%= render 'issue' %>
 
 <br />
 <br />
 <br />
-
-<%= link_to 'Edit Input', edit_mycode_path(@mycode) %> |
-<%= link_to 'Home Page', start_index_path %>
+<div align="center">
+<%= link_to 'Edit your input', edit_mycode_path(@mycode) %> |
+<%= link_to 'Generate new podcast code', new_mycode_path %> |
+<%= link_to 'Go back to home page', start_index_path %>
+</div>
+<br />
+<br />
+<br />
 
 

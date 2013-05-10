@@ -4,6 +4,11 @@ resources :start
   resources :vols, :path => "VolumeIssue"
   resources :doilists, :path => "EmbargoPaP"
   resources :mycodes, :path => "podcast"
+  resources :homerights do
+    resources :regulars do 
+      resource :editorial
+  end  
+  end
 
 
   # The priority is based upon order of creation:

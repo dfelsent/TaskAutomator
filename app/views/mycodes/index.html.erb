@@ -1,15 +1,18 @@
 <p>&nbsp;</p>
-<h2>Previously Generated Podcast Codes</h2>
+<div align="center">
+<h2>Podcast Code Generator</h2>
+<strong><%= link_to 'Generate new code here', new_mycode_path %>&nbsp;&nbsp;&nbsp;<%= link_to 'Back to home page', start_index_path %></strong>
+<h4>Previously Generated Code</h4>
 <p>&nbsp;</p>
 
-<table>
+<table style="border:1px solid black;">
     <th>Speaker</th>
     <th>Date</th>
 <% @mycodes.each do |mycode| %>
     <tr>
         
 <td><%= mycode.speaker %></td>
-  <td><%= mycode.date.strftime('%B %d, %Y') %></td>
+  <td><%= mycode.date.strftime('%B %e, %Y') %></td>
 <td><%= link_to 'Show', mycode %></td>
 <td><%= link_to 'Edit', edit_mycode_path(mycode) %></td>
  <td><%= link_to 'Delete', mycode, method: :delete %></td>
@@ -18,5 +21,4 @@
 </table>
 
 <br />
-
-<%= link_to 'Generate New Code', new_mycode_path %>&nbsp;&nbsp;&nbsp;<%= link_to 'Back to Home Page', start_index_path %>
+</div>

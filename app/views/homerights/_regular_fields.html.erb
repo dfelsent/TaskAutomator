@@ -1,0 +1,23 @@
+
+<fieldset>
+  <br/>
+  <%= f.label :title, "Title" %><br />
+  <%= f.text_field :title, :size => '60' %><br />
+  
+  <%= f.label :author, "Author" %><br />
+  <%= f.text_field :author, :size => '60' %><br />
+  
+  <%= f.label :link, "Link" %><br />
+  <%= f.text_field :link, :size => '60' %><br />
+&nbsp;&nbsp;
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "Remove this article", '#', class: "remove_fields" %>
+
+<%= f.fields_for :editorials do |builder| %>
+    <%= render 'editorial_fields', f: builder %>
+  <% end %>
+
+  <%= link_to_add_fields "Add related editorial", f, :editorials %>
+<br/>
+</fieldset>
+

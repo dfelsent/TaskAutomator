@@ -1,0 +1,27 @@
+<%= form_for @homeright do |f| %>
+  <% if @homeright.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@homeright.errors.count, "error") %> prohibited this code from being saved:</h2>
+      <ul>
+      <% @homeright.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<br>
+Select the date of issue release:
+<%= f.date_select :issuedate %>
+<br>
+
+<%= f.fields_for :regulars do |builder| %>
+  <%= render 'regular_fields', f: builder %>
+<% end %>
+
+<%= link_to_add_fields "Add Article", f, :regulars %>
+<p>&nbsp;</p>
+<div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

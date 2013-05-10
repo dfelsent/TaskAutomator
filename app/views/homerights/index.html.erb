@@ -1,0 +1,26 @@
+<div align="center">
+<br />
+<h2>Home-right Code Generator</h2>
+<div><strong><%= link_to 'Generate new code here', new_homeright_path %>&nbsp;&nbsp;&nbsp;<%= link_to 'Back to home page', start_index_path %></strong></div><br>
+<h4>Previously Generated Code</h4>
+<table style="border:1px solid black;">
+  <tr>
+    <th>Issue Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @homerights.each do |homeright| %>
+  <tr>
+    <td><%= "#{homeright.issuedate.strftime('%B %e, %Y').upcase}" %></td>&nbsp;
+    <td><%= link_to 'Show', homeright %></td>
+    <td><%= link_to 'Edit', edit_homeright_path(homeright) %></td>
+    <td><%= link_to 'Remove', homeright, method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+</div>
+
+

@@ -34,26 +34,15 @@ class VolsController < ApplicationController
     end
   end
 
-  # GET /doilists/1/edit
-  
-
   # POST /doilists
   # POST /doilists.json
   def create
     @vol = Vol.new(params[:vol])
 
     if @vol.save
-        #flash[:notice] = "Successfully submitted your entry."
         @vol.delay.scrape 
-        flash[:notice] = "Submitting your info to Benchpress"
+        flash[:notice] = "Your entries have been sent."
         redirect_to start_index_path 
-        #redirect_to start_index_path, flash[:notice] => 'Your form was succesfully submitted!'
-        #redirect_to waitforit
-
-       # Delayed::Job.enqueue(ScrapeJob.new(params[:id]))
-        #@doilist.delay.scrape
-        #format.html { redirect_to @doilist, notice: 'Your form was successfully submitted!' }
-       # format.json { render json: @doilist, status: :created, location: @doilist }
       else
         render :action => 'new'
         format.html { render action: "new" }

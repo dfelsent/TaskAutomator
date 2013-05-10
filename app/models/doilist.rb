@@ -1,23 +1,6 @@
 require 'digest'
 class Doilist < ActiveRecord::Base
 
-#doilist = Doilist.find(doilist_id)
-  #doilist.delay(:scrape)
-
-#after_save do |doilist|
- # doilist = Doilist.find(doilist_id)
-  #doilist.delay.scrape
-  #runscript.delay.scrape(params[:doilist])
-  #flash[:notice] = "Currently sending your entry"
-#end
-
-#after_save :scrape 
-#after_commit :destroy
-
-#def self.scrape(id)
- # find(id).scrape
-#end
-
 #Note: On 5/6 removed all attr_accessor attributes because they prevented DelayedJob from working properly.		
   #attr_accessor :myuserid, :mypass, :mydate, :mymonth, :myyear, :mylist
 
@@ -69,16 +52,6 @@ class Doilist < ActiveRecord::Base
       page = agent.submit(entryform, entryform.button_with(:name => 'CA_continue'))
 
     end 
-    #redirect_to start_index_path, :notice => 'Your form was succesfully submitted!'
-    #Delayed::Job.destroy_all
   end
-  #handle_asynchronously :scrape
-
-
-#before_save :destroy_record
-
-#def destroy_record
-#	false
-#end
 
 end

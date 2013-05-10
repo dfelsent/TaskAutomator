@@ -1,0 +1,71 @@
+<div align="center"><p id="notice"><%= notice %></p>
+<br />
+<h3 align="center">Your Home_right code:</h3>
+<%= link_to 'Edit this code', edit_homeright_path(@homeright) %> |
+<%= link_to 'Index Page', homerights_path %> | <%= link_to 'Journals Home Page', start_index_path %>
+</div><br />
+<br/>
+<%=	"<!-- * Begin editable area * -->" %>
+<br>
+
+	<%=		"<table>
+				<tbody>
+					<tr>
+						<td colspan=\"2\">
+							<a href=\"/content/early/recent\"><img src=\"/site/includefiles/early-release-button2.jpg\" /></a></td>
+					</tr>
+					<tr>
+						<td colspan=\"2\">
+							&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan=\"2\">
+							<h4>
+								<a href=\"/content/current\">CURRENT ISSUE: #{h@homeright.issuedate.strftime('%B %e, %Y').upcase}</a></h4>
+						</td>
+					</tr>
+					<tr>
+						<td colspan=\"2\">
+							&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan=\"2\">
+							<b><u>HIGHLIGHTS</u></b></td>
+					</tr>"  %>
+					
+<br />
+<br />
+
+<% @homeright.regulars.each do |regular| %>
+
+<%=  "<tr>
+						<td colspan=\"2\">
+							<img height=\"12\" src=\"/icons/misc/arrow_orange.gif\" width=\"14\" /> <a href=\"#{regular.link}\">#{regular.title}</a> <i>#{regular.author}</i></td>
+					</tr>" %>
+<br />
+
+
+<% regular.editorials.each do |editorial| %>
+
+<%= 
+
+ 					"<tr>
+						<td colspan=\"2\">
+							&nbsp; <img height=\"12\" src=\"/site/misc/images/arrow_DARKblue.gif\" width=\"14\" /> <a href=\"\"#{editorial.edlink}\">Editorial:</a> <i>#{editorial.edauthor}</i></td>
+					</tr>" %>
+
+
+<br />
+<br />
+<% end %>
+<% end %>
+
+<%= render 'bottom_of_issue' %>
+
+<br />
+<br />
+
+
+
+
+

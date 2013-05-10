@@ -1,10 +1,16 @@
 <h3 style="color:green"><%= flash.keep[:notice] %></h3>
 <p>&nbsp;</p>
 
-<h1>Journals Team</h1><br>
-<h3>Some useful web applications</h3>
+<h1 align="center">ASCO Journals Team</h1><br>
+<h3 align="center"><em>Some helpful web applications</em></h3>
 <br>
 <br>
-<%= link_to 'New Early Release Embargo/PaP Date Entry', new_doilist_path %> |
-<%= link_to 'New Volume/Issue Entry', new_vol_path %> |
-<%= link_to 'New Podcast Code', new_mycode_path %>
+<div align="center">
+	<h4>Form Entry</h4>
+	<%= link_to 'Early Release Embargo/PaP Date Entry', new_doilist_path %> |
+	<%= link_to 'Volume/Issue Entry', new_vol_path %> 
+	<p>&nbsp;</p>
+	<h4>Code Generation</h4>
+	<%= link_to 'Podcast Code', mycodes_path %> |
+	<%= link_to 'JCO Home-right Code', homerights_path %>
+</div>
