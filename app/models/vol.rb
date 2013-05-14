@@ -26,7 +26,7 @@ mylistarray = mylist.strip.split(/[\s]+/)
 mylistfinal = mylistarray.map{|l| l}.uniq
 
 mylistfinal.each do |doi|
-    url ='http://submit.jco.org/tracking/msedit?msid=' + doi + '&roleName=staff_thirteen&msedit=prod_info'
+    url ='http://submit.jco.org/tracking/msedit?msid=' + doi + '&roleName=staff&msedit=prod_info'
     page = a.get("http://submit.jco.org/submission/queues")
     page = a.get("#{url}") 
 
