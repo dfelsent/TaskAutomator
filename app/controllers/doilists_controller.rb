@@ -35,7 +35,8 @@ class DoilistsController < ApplicationController
   
       if @doilist.save
         #flash[:notice] = "Successfully submitted your entry."
-        @doilist.delay.scrape 
+        @doilist.delay.scrape
+        @doilist.delay.destroy
         flash[:notice] = "Your entries have been sent."
         redirect_to start_index_path 
       else
@@ -45,4 +46,5 @@ class DoilistsController < ApplicationController
   
       end
     end
+
 end

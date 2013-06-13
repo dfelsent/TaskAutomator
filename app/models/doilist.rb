@@ -11,6 +11,7 @@ class Doilist < ActiveRecord::Base
 		validates :myyear, :presence => true, :numericality => true
 		validates :mylist, :presence => true
 
+
   def scrape
 
     agent = Mechanize.new 
@@ -50,8 +51,7 @@ class Doilist < ActiveRecord::Base
 
 
       page = agent.submit(entryform, entryform.button_with(:name => 'CA_continue'))
-
-    end 
+    end  
   end
 
 end

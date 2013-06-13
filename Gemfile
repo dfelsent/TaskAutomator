@@ -30,13 +30,19 @@ group :production do
   gem 'pg', '0.12.2'
 end
 
+gem 'unicorn'
+
+gem 'newrelic_rpm'
+
+#maybe add gem 'delayed_job' to see if it helps with the log?
+
+gem 'delayed_job'
+
 gem 'delayed_job_active_record'
 
 gem 'daemons'
 
-gem 'unicorn'
-
-gem 'newrelic_rpm'
+#gem 'newrelic_rpm'
 
 gem "workless", "~> 1.1.1"
 

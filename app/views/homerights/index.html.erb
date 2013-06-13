@@ -13,10 +13,10 @@
 
 <% @homerights.each do |homeright| %>
   <tr>
-    <td><%= "#{homeright.issuedate.strftime('%B %e, %Y').upcase}" %></td>&nbsp;
-    <td><%= link_to 'Show', homeright %></td>
-    <td><%= link_to 'Edit', edit_homeright_path(homeright) %></td>
-    <td><%= link_to 'Remove', homeright, method: :delete %></td>
+    <td><%= "#{homeright.issuedate.strftime('%B %e, %Y')}" %></td><td></td>
+    <td><%= link_to 'Show', homeright %></td><td></td>
+    <td><%= link_to 'Edit', edit_homeright_path(homeright) %></td><td></td>
+    <td><%= link_to 'Remove', homeright, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

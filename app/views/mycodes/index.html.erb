@@ -12,10 +12,10 @@
     <tr>
         
 <td><%= mycode.speaker %></td>
-  <td><%= mycode.date.strftime('%B %e, %Y') %></td>
-<td><%= link_to 'Show', mycode %></td>
-<td><%= link_to 'Edit', edit_mycode_path(mycode) %></td>
- <td><%= link_to 'Delete', mycode, method: :delete %></td>
+  <td><%= mycode.date.strftime('%B %e, %Y') %></td><td></td>
+<td><%= link_to 'Show', mycode %></td><td></td>
+<td><%= link_to 'Edit', edit_mycode_path(mycode) %></td><td></td>
+ <td><%= link_to 'Delete', mycode, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
     <% end %>
 </table>

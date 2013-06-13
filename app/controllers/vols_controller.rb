@@ -41,6 +41,7 @@ class VolsController < ApplicationController
 
     if @vol.save
         @vol.delay.scrape 
+        @vol.delay.destroy
         flash[:notice] = "Your entries have been sent."
         redirect_to start_index_path 
       else
