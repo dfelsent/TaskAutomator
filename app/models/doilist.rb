@@ -49,7 +49,6 @@ class Doilist < ActiveRecord::Base
       entryform.field_with(:name => 'fixed_publish_ahead_of_print_dtday').options[("#{mydate}").to_i].select
       entryform.field_with(:name => 'fixed_publish_ahead_of_print_dtyear').options[("#{myyear}").to_i].select
 
-
       page = agent.submit(entryform, entryform.button_with(:name => 'CA_continue'))
     end  
   end
