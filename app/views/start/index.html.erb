@@ -1,4 +1,4 @@
-<h3 style="color:green"><%= flash.keep[:notice] %></h3>
+<h3 style="color:green" id="notice"><%= notice %></h3>
 <p>&nbsp;</p>
 
 <h1 align="center">ASCO Journals Team</h1><br>
@@ -10,7 +10,12 @@
 	<%= link_to 'Early Release Embargo/PaP Date Entry', new_doilist_path %> |
 	<%= link_to 'Volume/Issue Entry', new_vol_path %> 
 	<p>&nbsp;</p>
+	
 	<h4>Code Generation</h4>
 	<%= link_to 'Podcast Code', mycodes_path %> |
 	<%= link_to 'JCO Home-right Code', homerights_path %>
+	<p>&nbsp;</p>
+
+	<h4>QA Verification</h4>
+	<%= link_to 'Early Release Article DOI Check', new_doi_comparison_path %>
 </div>

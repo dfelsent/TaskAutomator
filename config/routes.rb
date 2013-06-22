@@ -1,5 +1,8 @@
 Bptest::Application.routes.draw do
 
+  resources :doi_comparisons
+
+
 resources :start 
   resources :vols, :path => "VolumeIssue"
   resources :doilists, :path => "EmbargoPaP"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130509213221) do
+ActiveRecord::Schema.define(:version => 20130621230925) do
 
   create_table "cms_attachment_versions", :force => true do |t|
     t.integer  "original_record_id"
@@ -515,6 +515,13 @@ ActiveRecord::Schema.define(:version => 20130509213221) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
+  create_table "doi_comparisons", :force => true do |t|
+    t.text     "heather"
+    t.text     "hwx"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "doilists", :force => true do |t|
     t.text     "mylist"
