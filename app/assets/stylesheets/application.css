@@ -10,7 +10,9 @@
  *
  *= require_self
  *= require_tree .
+ *= require bootstrap_and_overrides
 */
+
 
 .wrapped-text {
     white-space: pre-wrap;

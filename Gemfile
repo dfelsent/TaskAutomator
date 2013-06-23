@@ -20,6 +20,7 @@ group :assets do
    gem 'therubyracer'
 gem 'less-rails'
   gem 'uglifier', '>= 1.2.3'
+  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 end
 
 gem 'jquery-rails', '2.0.2'
@@ -45,7 +46,6 @@ gem 'daemons'
 #gem 'newrelic_rpm'
 
 gem "workless", "~> 1.1.1"
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 #gem "twitter-bootstrap-rails"
 
 # To use ActiveModel has_secure_password
