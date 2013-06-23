@@ -27,6 +27,10 @@ Bptest::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  # Set logger to STDOUT for Unicorn logging
+ # config.logger = Logger.new(STDOUT)
+  #STDOUT.sync = true
+
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 

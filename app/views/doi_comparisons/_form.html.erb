@@ -12,15 +12,15 @@
   <% end %>
   <div class="field">
     <%= f.label(:heather, t('Heather\'s list:')) %><br />
-    <%= f.text_area :heather, :placeholder => "Paste in Heather's list here. All articles must be separated by spaces or new lines. They must also be five characters long, with the last four digits representing the last four digits of the DOI.               For example: C9999" %>
+    <%= f.text_area :heather, :placeholder => "Paste in Heather's list here. All articles must be separated by spaces or new lines. They must also be five characters long, with the last four digits representing the last four digits of the DOI.                                For example: C9999" %>
   </div>
 
   <div class="field">
     <%= f.label(:hwx, t('HWX list:')) %><br />
-    <%= f.text_area :hwx, :placeholder => "Paste in the list from HWX. All articles must be separated by either spaces or new lines. They must also be in their full DOI format.                                   For example: 10.1200/JCO.2013.99.9999" %>
+    <%= f.text_area :hwx, :placeholder => "Paste in the list from HWX. All articles must be separated by either spaces or new lines. They must also be in their full DOI format.                                          For example: 10.1200/JCO.2013.99.9999" %>
   </div>
   <div class="actions">
-    <%= f.submit "Compare these articles"%>
+    <%= f.submit "Compare these articles", :class => 'btn btn-primary' %>
   </div>
 
 <% end %>
