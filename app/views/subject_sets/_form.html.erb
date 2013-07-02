@@ -1,0 +1,19 @@
+<%= simple_form_for @subject_set do |f| %>
+  <% if @subject_set.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@subject_set.errors.count, "error") %> prohibited this subject_set from being saved:</h2>
+
+      <ul>
+      <% @subject_set.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.input :subject_codes %>
+
+  <%= f.button :submit %>
+
+  
+<% end %>

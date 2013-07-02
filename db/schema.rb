@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130621230925) do
+ActiveRecord::Schema.define(:version => 20130702220411) do
 
   create_table "cms_attachment_versions", :force => true do |t|
     t.integer  "original_record_id"
@@ -572,6 +572,12 @@ ActiveRecord::Schema.define(:version => 20130621230925) do
     t.string   "author"
     t.text     "link"
     t.integer  "homeright_id"
+  end
+
+  create_table "subject_sets", :force => true do |t|
+    t.text     "subject_codes"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "vols", :force => true do |t|

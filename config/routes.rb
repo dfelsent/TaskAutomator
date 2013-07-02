@@ -1,5 +1,8 @@
 Bptest::Application.routes.draw do
 
+  resources :subject_sets
+
+
   resources :doi_comparisons
 
 

@@ -17,8 +17,8 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.2'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-   gem 'therubyracer'
-gem 'less-rails'
+  gem 'therubyracer'
+  gem 'less-rails'
   gem 'uglifier', '>= 1.2.3'
   gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 end
@@ -46,6 +46,8 @@ gem 'daemons'
 #gem 'newrelic_rpm'
 
 gem "workless", "~> 1.1.1"
+
+gem 'simple_form' 
 #gem "twitter-bootstrap-rails"
 
 # To use ActiveModel has_secure_password

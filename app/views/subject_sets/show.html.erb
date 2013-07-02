@@ -1,0 +1,9 @@
+<div align="center">
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h4 id="notice"><%= notice %></h4>
+<p>&nbsp;</p>
+<p><strong>Here is your input:</strong></p><br>
+<%= @subject_set.subject_codes.gsub(/\w{2}\.\w{4}\/\w{3}\.\w{4}\.\w{2}\.\w{4}+/, '').split(/[\s,]/).uniq.reject! { |c| c.empty? } %>
+<p>&nbsp;</p>
+</div>
