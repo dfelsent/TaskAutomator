@@ -17,11 +17,13 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.2'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', '~> 0.10.2', :platforms => :ruby
-  gem 'less-rails'
-  gem 'uglifier', '>= 1.2.3'
-  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+   gem 'uglifier', '>= 1.2.3'
+  
 end
+#gem 'therubyracer', '~> 0.10.2', :platforms => :ruby
+ # gem 'less-rails'
+
+#gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 gem 'jquery-rails', '2.0.2'
 
@@ -48,7 +50,7 @@ gem 'daemons'
 gem "workless", "~> 1.1.1"
 
 gem 'simple_form' 
-#gem "twitter-bootstrap-rails"
+#gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # To use ActiveModel has_secure_password
 #gem 'bcrypt-ruby', '~> 3.0.0'

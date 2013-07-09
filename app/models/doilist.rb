@@ -18,7 +18,8 @@ class Doilist < ActiveRecord::Base
     #agent.agent.http.reuse_ssl_sessions = false
 
     page = agent.get('http://submit.jco.org/')
-
+    #below code added on 7-9-2013
+    page.encoding = 'utf-8'
     myform = page.form_with(:name => 'signinForm')
 
     myuserid_field = myform.field_with(:name => "MSTRServlet.emailAddr")
@@ -38,7 +39,8 @@ class Doilist < ActiveRecord::Base
       url ='http://submit.jco.org/tracking/msedit?msid=' + doi + '&roleName=staff_thirteen&msedit=prod_info&show_dates=true#prod_dates' 
       page = agent.get("http://submit.jco.org/submission/queues")
       page = agent.get("#{url}") 
-
+      #below code added on 7-9-2013
+      page.encoding = 'utf-8'
       entryform = page.form_with(:name => 'submitManuscript') 
 
       entryform.field_with(:name => 'fixed_embargo_dtmonth').options[("#{mymonth}").to_i].select
