@@ -15,13 +15,13 @@ end
 group :assets do
   gem 'sass-rails',   '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.2'
-
+  #gem 'less-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
    gem 'uglifier', '>= 1.2.3'
-  
+   gem 'therubyracer', '~> 0.10.2'
+  gem 'less-rails'
+  gem "twitter-bootstrap-rails"
 end
-#gem 'therubyracer', '~> 0.10.2', :platforms => :ruby
- # gem 'less-rails'
 
 #gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
