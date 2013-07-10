@@ -3,45 +3,19 @@
 <head>
   <title>Journals Apps</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= stylesheet_link_tag    "bootstrap_and_overrides" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-	<!-- Added in with home_right -->
-	<div id="container">
-      
-    <div class="navbar navbar-fixed-top navbar-inverse">
-     <div class="navbar-inner">
-      <div class="container">
-       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-       </a>
-       <a class="brand" href="/">ASCO Journals</a>
-       <div class="nav-collapse">
-        <ul class="nav">
-          <li><%= link_to "", start_index_path %></li>
-          <li><%= link_to "", start_index_path %></li>
-          <li><%= link_to "", start_index_path %></li>
-          <li><%= link_to "", start_index_path %></li>
-        </ul>
-       </div>
-     </div>
-   </div>
-  </div>
-
+  <!-- Added in with home_right -->
+  <div id="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, id: "flash_#{name}" %>
+      <% end %>
       <!-- -->
-	<%= yield %>
+  <%= yield %>
 <!-- also added in with home_right -->
-    <div class="navbar navbar-fixed-bottom navbar-inverse">  <div class="navbar-inner">
-   
-  </div></div>
-
-	</div>
+  </div>
 <!-- -->
-</div>
-	</body>
+  </body>
 </html>
