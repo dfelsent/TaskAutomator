@@ -13,8 +13,9 @@ resources :start
   resources :homerights do
     resources :regulars do 
       resource :editorial
-  end  
+    end  
   end
+  resources :subject_sets, :path => "SubjectCodes"
 
 
   # The priority is based upon order of creation:
