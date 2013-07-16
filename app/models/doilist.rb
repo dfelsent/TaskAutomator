@@ -4,13 +4,21 @@ class Doilist < ActiveRecord::Base
 #Note: On 5/6 removed all attr_accessor attributes because they prevented DelayedJob from working properly.		
   #attr_accessor :myuserid, :mypass, :mydate, :mymonth, :myyear, :mylist
 
-		validates :myuserid, :presence => true
-		validates :mypass, :presence => true
-		validates :mydate, :presence => true, :numericality => true
-		validates :mymonth, :presence => true, :numericality => true
-		validates :myyear, :presence => true, :numericality => true
-		validates :mylist, :presence => true
+		#validates :myuserid, :presence => true
+		#validates :mypass, :presence => true
+		#validates :mydate, :presence => true, :numericality => true
+		#validates :mymonth, :presence => true, :numericality => true
+		#validates :myyear, :presence => true, :numericality => true
+		#validates :mylist, :presence => true
 
+require 'iconv' unless String.method_defined?(:encode)
+if String.method_defined?(:encode)
+  file_contents.encode!('UTF-16', 'UTF-8', :invalid => :replace, :replace => '')
+  file_contents.encode!('UTF-8', 'UTF-16')
+else
+  ic = Iconv.new('UTF-8', 'UTF-8//IGNORE')
+  file_contents = ic.iconv(file_contents)
+end
 
   def scrape
 
@@ -52,6 +60,7 @@ class Doilist < ActiveRecord::Base
       entryform.field_with(:name => 'fixed_publish_ahead_of_print_dtyear').options[("#{myyear}").to_i].select
 
       page = agent.submit(entryform, entryform.button_with(:name => 'CA_continue'))
+      sleep 10.1
     end  
   end
 
