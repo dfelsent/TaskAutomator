@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateDoilists < ActiveRecord::Migration
   def change
     create_table :doilists do |t|

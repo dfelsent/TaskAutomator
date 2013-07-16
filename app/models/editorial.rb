@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Editorial < ActiveRecord::Base
   attr_accessible :edauthor, :edlink, :regular_id
 

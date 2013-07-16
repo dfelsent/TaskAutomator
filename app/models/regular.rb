@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Regular < ActiveRecord::Base
    attr_accessible :title, :author, :link, :homeright_id, :editorials_attributes
 

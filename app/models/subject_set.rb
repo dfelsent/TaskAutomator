@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class SubjectSet < ActiveRecord::Base
   attr_accessible :subject_codes
 

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateMycodes < ActiveRecord::Migration
   def change
     create_table :mycodes do |t|

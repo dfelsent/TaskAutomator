@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddMyuseridAndMypassAndMylistToVols < ActiveRecord::Migration
   def change
     add_column :vols, :myuserid, :string

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'digest'
 class Doilist < ActiveRecord::Base
 
@@ -11,23 +12,17 @@ class Doilist < ActiveRecord::Base
 		#validates :myyear, :presence => true, :numericality => true
 		#validates :mylist, :presence => true
 
-require 'iconv' unless String.method_defined?(:encode)
-if String.method_defined?(:encode)
-  file_contents.encode!('UTF-16', 'UTF-8', :invalid => :replace, :replace => '')
-  file_contents.encode!('UTF-8', 'UTF-16')
-else
-  ic = Iconv.new('UTF-8', 'UTF-8//IGNORE')
-  file_contents = ic.iconv(file_contents)
-end
+#def sanitize_utf8(string)
+ # return nil if string.nil?
+ # return string if string.valid_encoding?
+ # string.chars.select { |c| c.valid_encoding? }.join
+#end
 
   def scrape
 
     agent = Mechanize.new 
-    #agent.agent.http.reuse_ssl_sessions = false
 
     page = agent.get('http://submit.jco.org/')
-    #below code added on 7-9-2013
-    page.encoding = 'utf-8'
     myform = page.form_with(:name => 'signinForm')
 
     myuserid_field = myform.field_with(:name => "MSTRServlet.emailAddr")
@@ -38,8 +33,8 @@ end
     myform.checkbox_with(:name => 'remember_me').check
 
     page = agent.submit(myform, myform.buttons.first)
-
-    mylistarray = mylist.strip.split(/[\s]+/)
+    mylistnew = mylist.encode('UTF-16le', :invalid => :replace, :replace => '').encode('UTF-8')
+    mylistarray = mylistnew.strip.split(/[\s]+/)
 
     mylistfinal = mylistarray.map{|l| l[0..-5].sub(/(.*)\./,'\1').gsub('.','/')}.uniq
 
@@ -47,8 +42,6 @@ end
       url ='http://submit.jco.org/tracking/msedit?msid=' + doi + '&roleName=staff_thirteen&msedit=prod_info&show_dates=true#prod_dates' 
       page = agent.get("http://submit.jco.org/submission/queues")
       page = agent.get("#{url}") 
-      #below code added on 7-9-2013
-      page.encoding = 'utf-8'
       entryform = page.form_with(:name => 'submitManuscript') 
 
       entryform.field_with(:name => 'fixed_embargo_dtmonth').options[("#{mymonth}").to_i].select

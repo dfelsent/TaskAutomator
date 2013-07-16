@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateSubjectSets < ActiveRecord::Migration
   def change
     create_table :subject_sets do |t|

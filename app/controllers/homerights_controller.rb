@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class HomerightsController < ApplicationController
   # GET /homerights
   # GET /homerights.json

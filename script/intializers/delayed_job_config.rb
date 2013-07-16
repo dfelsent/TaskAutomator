@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Delayed::Worker.sleep_delay = 60
 Delayed::Worker.max_attempts = 2
 Delayed::Worker.max_run_time = 20.minutes

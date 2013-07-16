@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddDescriptionAndBytesizeAndKeywordsToMycodes < ActiveRecord::Migration
   def change
     add_column :mycodes, :description, :text

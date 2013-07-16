@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class DoiComparisonsController < ApplicationController
   # GET /doi_comparisons
   # GET /doi_comparisons.json

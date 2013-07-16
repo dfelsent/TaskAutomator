@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'delayed_job'
 class VolsController < ApplicationController
   # GET /doilists

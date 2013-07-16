@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Homeright < ActiveRecord::Base
    attr_accessible :issuedate, :regulars_attributes
 

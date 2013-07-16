@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddMyuseridAndMypassAndMymonthAndMydateAndMyyearToDoilists < ActiveRecord::Migration
   def change
     add_column :doilists, :myuserid, :string

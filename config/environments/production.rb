@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Bptest::Application.configure do
   # Uncomment and set this to match your production URL. Used for emailing links to the CMS. (default: localhost:3000)
   # config.cms.site_domain = "www.example.com"

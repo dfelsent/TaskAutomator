@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 if defined?(Rails) && !Rails.env.nil?
   #puts '... ActiveRecord and ActiveResource Logger set to STDOUT'
   logger = Logger.new(STDOUT)

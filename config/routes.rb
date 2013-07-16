@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Bptest::Application.routes.draw do
 
   resources :subject_sets

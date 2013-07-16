@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class DoiComparison < ActiveRecord::Base
   attr_accessible :heather, :hwx
   #attr_accessor :flash_notice

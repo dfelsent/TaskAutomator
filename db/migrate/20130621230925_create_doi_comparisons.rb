@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateDoiComparisons < ActiveRecord::Migration
   def change
     create_table :doi_comparisons do |t|

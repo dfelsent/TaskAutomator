@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # config/unicorn.rb
 worker_processes 3
 timeout 30

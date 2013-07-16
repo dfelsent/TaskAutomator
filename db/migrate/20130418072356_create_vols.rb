@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateVols < ActiveRecord::Migration
   def change
     create_table :vols do |t|
