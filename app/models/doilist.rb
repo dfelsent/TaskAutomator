@@ -12,17 +12,12 @@ class Doilist < ActiveRecord::Base
 		#validates :myyear, :presence => true, :numericality => true
 		#validates :mylist, :presence => true
 
-#def sanitize_utf8(string)
- # return nil if string.nil?
- # return string if string.valid_encoding?
- # string.chars.select { |c| c.valid_encoding? }.join
-#end
-
   def scrape
 
-    agent = Mechanize.new 
-
+    agent = Mechanize.new
+  
     page = agent.get('http://submit.jco.org/')
+    page.encoding = 'utf-8'
     myform = page.form_with(:name => 'signinForm')
 
     myuserid_field = myform.field_with(:name => "MSTRServlet.emailAddr")
@@ -33,6 +28,7 @@ class Doilist < ActiveRecord::Base
     myform.checkbox_with(:name => 'remember_me').check
 
     page = agent.submit(myform, myform.buttons.first)
+    page.encoding = 'utf-8'
     mylistnew = mylist.encode('UTF-16le', :invalid => :replace, :replace => '').encode('UTF-8')
     mylistarray = mylistnew.strip.split(/[\s]+/)
 
@@ -41,7 +37,8 @@ class Doilist < ActiveRecord::Base
     mylistfinal.each do |doi|
       url ='http://submit.jco.org/tracking/msedit?msid=' + doi + '&roleName=staff_thirteen&msedit=prod_info&show_dates=true#prod_dates' 
       page = agent.get("http://submit.jco.org/submission/queues")
-      page = agent.get("#{url}") 
+      page = agent.get("#{url}")
+      #page.encoding = 'utf-8'
       entryform = page.form_with(:name => 'submitManuscript') 
 
       entryform.field_with(:name => 'fixed_embargo_dtmonth').options[("#{mymonth}").to_i].select
