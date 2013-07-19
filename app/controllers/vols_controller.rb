@@ -39,10 +39,9 @@ class VolsController < ApplicationController
   # POST /doilists.json
   def create
     @vol = Vol.new(params[:vol])
-
+    
     if @vol.save
-        @vol.delay.scrape 
-        @vol.delay.destroy
+      Delayed::Job.enqueue VolScrapeJob.new(@vol.id)
         flash[:notice] = "Your entries have been sent."
         redirect_to start_index_path 
       else
