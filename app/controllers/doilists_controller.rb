@@ -31,20 +31,18 @@ class DoilistsController < ApplicationController
   
   # POST /doilists
   # POST /doilists.json
-  def create
+   def create
     @doilist = Doilist.new(params[:doilist])
   
       if @doilist.save
-        #flash[:notice] = "Successfully submitted your entry."
-        @doilist.delay.scrape
-        #@doilist.delay.destroy
+        Delayed::Job.enqueue DoilistScrapeJob.new(@doilist.id)
         flash[:notice] = "Your entries have been sent."
-        redirect_to start_index_path 
+        redirect_to start_index_path
       else
         render :action => 'new'
         format.html { render action: "new" }
         format.json { render json: @doilist.errors, status: :unprocessable_entity }
-  
+
       end
     end
 
