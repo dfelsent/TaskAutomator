@@ -5,12 +5,12 @@ class Doilist < ActiveRecord::Base
 #Note: On 5/6 removed all attr_accessor attributes because they prevented DelayedJob from working properly.		
   #attr_accessor :myuserid, :mypass, :mydate, :mymonth, :myyear, :mylist
 
-		#validates :myuserid, :presence => true
-		#validates :mypass, :presence => true
-		#validates :mydate, :presence => true, :numericality => true
-		#validates :mymonth, :presence => true, :numericality => true
-		#validates :myyear, :presence => true, :numericality => true
-		#validates :mylist, :presence => true
+		validates :myuserid, :presence => true
+		validates :mypass, :presence => true
+		validates :mydate, :presence => true, :numericality => true
+		validates :mymonth, :presence => true, :numericality => true
+		validates :myyear, :presence => true, :numericality => true
+		validates :mylist, :presence => true
 
   def scrape
 

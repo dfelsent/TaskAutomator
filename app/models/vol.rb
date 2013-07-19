@@ -4,6 +4,9 @@ class Vol < ActiveRecord::Base
 
 validates :myuserid, :presence => true
 validates :mypass, :presence => true
+validates :mylist, :presence => true
+validates :volume, :presence => true, :numericality => true
+validates :issue, :presence => true,:numericality => true
 
 def scrape
   
