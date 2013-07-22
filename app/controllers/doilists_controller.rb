@@ -7,14 +7,6 @@ class DoilistsController < ApplicationController
 
   # GET /doilists/1
   # GET /doilists/1.json
-  def show
-    @doilist = Doilist.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @doilist }
-    end
-  end
 
   # GET /doilists/new
   # GET /doilists/new.json

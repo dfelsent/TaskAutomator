@@ -4,25 +4,9 @@ class VolsController < ApplicationController
   # GET /doilists
   # GET /doilists.json
 
-  def index
-    @vols = Vol.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @vols }
-    end
-  end
 
   # GET /doilists/1
   # GET /doilists/1.json
-  def show
-    @vol = Vol.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @vol }
-    end
-  end
 
   # GET /doilists/new
   # GET /doilists/new.json
