@@ -2,20 +2,22 @@
 <br />
 <h2>Home-right Code Generator</h2>
 <div><strong><%= link_to 'Generate new code here', new_homeright_path %></strong></div><br>
-<h4>Previously Generated Code</h4>
+<h4>Previously Generated Code</h4><br>
 <table style="border:1px solid black;">
   <tr>
+    <th>&nbsp;&nbsp;</th>
     <th>Issue Date</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
   </tr>
 
 <% @homerights.each do |homeright| %>
   <tr>
-    <td><%= "#{homeright.issuedate.strftime('%B %e, %Y')}" %></td><td></td>
-    <td><%= link_to 'Show', homeright %></td><td></td>
-    <td><%= link_to 'Edit', edit_homeright_path(homeright) %></td><td></td>
+    <td>&nbsp;</td>
+    <td><%= "#{homeright.issuedate.strftime('%B %e, %Y')}" %></td><td>&nbsp;&nbsp;</td>
+    <td><%= link_to 'Show', homeright %></td><td>&nbsp;</td>
+    <td><%= link_to 'Edit', edit_homeright_path(homeright) %></td><td>&nbsp;</td>
     <td><%= link_to 'Remove', homeright, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>

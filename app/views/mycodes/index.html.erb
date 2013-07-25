@@ -6,15 +6,17 @@
 <p>&nbsp;</p>
 
 <table style="border:1px solid black;">
-    <th>Speaker</th>
+    <th>&nbsp;&nbsp;</th>
+    <th>Speaker</th><th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
     <th>Date</th>
 <% @mycodes.each do |mycode| %>
     <tr>
-        
-<td><%= mycode.speaker %></td>
-  <td><%= mycode.date.strftime('%B %e, %Y') %></td><td></td>
-<td><%= link_to 'Show', mycode %></td><td></td>
-<td><%= link_to 'Edit', edit_mycode_path(mycode) %></td><td></td>
+ 
+<td>&nbsp;&nbsp;</td>       
+<td><%= mycode.speaker %></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+ <td><%= mycode.date.strftime('%B %e, %Y') %></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>
+<td><%= link_to 'Show', mycode %></td><td>&nbsp;</td>
+<td><%= link_to 'Edit', edit_mycode_path(mycode) %></td><td>&nbsp;</td>
  <td><%= link_to 'Delete', mycode, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
     <% end %>

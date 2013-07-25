@@ -1,28 +1,23 @@
 # -*- encoding : utf-8 -*-
 Bptest::Application.routes.draw do
 
-  resources :subject_sets
 
-
-  resources :doi_comparisons
-
-
-resources :start 
+  resources :start
   resources :vols, :path => "VolumeIssue"
   resources :doilists, :path => "EmbargoPaP"
   resources :mycodes, :path => "podcast"
-  resources :homerights do
+  resources :homerights, :path => "homeright" do
     resources :regulars do 
       resource :editorial
     end  
   end
-  resources :subject_sets, :path => "SubjectCodes"
+  resources :subject_sets, :path => "SubjectCodesCheck"
+  resources :doi_comparisons, :path => "DOICheck"
 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
-
-
+  #get 'podcast/:id', :as => 'podcastshow'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
