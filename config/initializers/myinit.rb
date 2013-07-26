@@ -1,13 +1,13 @@
 # -*- encoding : utf-8 -*-
-#if defined?(Rails) && !Rails.env.nil?
+if defined?(Rails) && !Rails.env.nil?
   #puts '... ActiveRecord and ActiveResource Logger set to STDOUT'
-  #logger = Logger.new(STDOUT)
+  logger = Logger.new(STDOUT)
   #ActiveRecord::Base.logger = logger
   #ActiveResource::Base.logger = logger
   #Delayed::Worker.logger = Logger.new(STDOUT)
   #Delayed::Worker.logger = logger
  # Delayed::Job.logger = logger
-#end
+end
 
 file_handle = File.open("log/#{Rails.env}_delayed_jobs.log", (File::WRONLY | File::APPEND | File::CREAT))
 # Be paranoid about syncing, part #1
