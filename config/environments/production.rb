@@ -43,7 +43,7 @@ Bptest::Application.configure do
    config.force_ssl = true
 
   # See everything in the log (default is :info)
-   #config.log_level = :info
+   #config.log_level = :info -> note 7-26: can't have this along with config.logger, or heroku crashes
 
   config.logger = Logger.new(STDOUT)
   config.logger.level = Logger.const_get(ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].upcase : 'INFO')
