@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'ruby', '1.9.3'
+#gem 'ruby', '1.9.3' uncommented because it can't find this version on this machine?
 # Bundle edge Rails instead:
 #gem 'rails', :git => 'git://github.com/rails/rails.git'
 
