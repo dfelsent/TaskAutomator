@@ -4,5 +4,3 @@
 
 require ::File.expand_path('../config/environment',  __FILE__)
 run Bptest::Application
-
-$stdout.sync = true
