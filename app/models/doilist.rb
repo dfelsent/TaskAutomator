@@ -50,6 +50,7 @@ class Doilist < ActiveRecord::Base
       entryform.field_with(:name => 'fixed_publish_ahead_of_print_dtyear').options[("#{myyear}").to_i].select
 
       page = agent.submit(entryform, entryform.button_with(:name => 'CA_continue'))
+      sleep 10.1
     end  
   end
 
