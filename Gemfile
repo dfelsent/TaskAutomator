@@ -53,6 +53,8 @@ gem "workless", "~> 1.1.1"
 gem 'simple_form' 
 #gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
+gem 'strong_parameters'
+
 # To use ActiveModel has_secure_password
 #gem 'bcrypt-ruby', '~> 3.0.0'
 

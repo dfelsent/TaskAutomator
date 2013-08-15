@@ -24,7 +24,7 @@ class DoilistsController < ApplicationController
   # POST /doilists
   # POST /doilists.json
    def create
-    @doilist = Doilist.new(params[:doilist])
+    @doilist = Doilist.new(doilist_params)
   
       if @doilist.save
         Delayed::Job.enqueue DoilistScrapeJob.new(@doilist.id)
@@ -36,6 +36,11 @@ class DoilistsController < ApplicationController
         format.json { render json: @doilist.errors, status: :unprocessable_entity }
 
       end
+    end
+
+    private
+    def doilist_params
+      params.require(:doilist).permit(:myuserid, :mypass, :mydate, :mymonth, :myyear, :mylist)
     end
 
 end

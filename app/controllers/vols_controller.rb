@@ -22,7 +22,7 @@ class VolsController < ApplicationController
   # POST /doilists
   # POST /doilists.json
   def create
-    @vol = Vol.new(params[:vol])
+    @vol = Vol.new(vol_params)
     
     if @vol.save
       Delayed::Job.enqueue VolScrapeJob.new(@vol.id)
@@ -34,4 +34,10 @@ class VolsController < ApplicationController
         format.json { render json: @vol.errors, status: :unprocessable_entity }
       end
   end
+
+  private
+  def vol_params
+    params.require(:vol).permit(:myuserid, :mypass, :mylist, :volume, :issue)
+  end
+
 end
