@@ -8,7 +8,7 @@
 <%=	"<!-- * Begin editable area * -->" %>
 <br>
 
-	<%=		"<table>
+  <%=		"<table>
 				<tbody>
 					<tr>
 						<td colspan=\"2\">
@@ -17,18 +17,39 @@
 					<tr>
 						<td colspan=\"2\">
 							&nbsp;</td>
-					</tr>
-					<tr>
+					</tr>" %>
+					<br />
+					<br />
+  <%=
+					"<tr>
 						<td colspan=\"2\">
 							<h4>
 								<a href=\"/content/current\">CURRENT ISSUE: #{h@homeright.issuedate.strftime('%B %e, %Y').upcase}</a></h4>
+						</td>
+					</tr>" %>
+  <br />
+  <br />
+  <%=					"<tr>
+						<td colspan=\"2\">
+							&nbsp;</td>
+					</tr>
+							<!-- IF THERE IS A FEATURED SPECIAL ARTICLE 
+					<tr>
+						<td colspan=\"2\" style=\"background-color:#FFC\">
+							<h4>
+								Featured Content<br />
+								<a href=\"http://jco.ascopubs.org/content/31/25/3147.short\"><em>ASCO Special Article</em>: Tobacco Cessation and Control a Decade Later: American Society of Clinical Oncology Policy Statement Update</a> <i>Hanna et al</i></h4>
 						</td>
 					</tr>
 					<tr>
 						<td colspan=\"2\">
 							&nbsp;</td>
 					</tr>
-					<tr>
+					 END OF FEATURED SPECIAL ARTICLE //-->" %>
+					 <br />
+					 <br />
+  <%=
+					"<tr>
 						<td colspan=\"2\">
 							<b><u>HIGHLIGHTS</u></b></td>
 					</tr>"  %>
@@ -59,6 +80,7 @@
 <br />
 <% end %>
 <% end %>
+<br />
 
 <%= render 'bottom_of_issue' %>
 
