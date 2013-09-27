@@ -4,13 +4,13 @@
 <div align="center">
 <b>Title:</b> <%= @mycode.podtitle %><br>
 <b>Description:</b> <%= @mycode.description %><br>
-<b>Link to index page:</b> http://jco.ascopubs.org/site/podcasts/index.xhtml<br>
-<b>Enclosure link:</b> <%= @mycode.podlink %><br>
-<b>Date:</b> <%= @mycode.date.strftime('%B %d, %Y') %><br>
+<b>Link (to index):</b> http://jco.ascopubs.org/site/podcasts/index.xhtml<br>
+<b>Pub Date:</b> <%= @mycode.date.strftime('%B %d, %Y') %><br>
+<b>Enclosure - URL:</b> <%= @mycode.podlink %>?mobile<br>
+<b>Enclosure - Length:</b> <%= @mycode.bytesize %><br>
 <b>Subtitle:</b> <%= @mycode.podtitle %><br>
 <b>Summary:</b> <%= @mycode.description %><br>
 <b>Duration:</b> <%= @mycode.duration.strftime('%X') %><br>
-<b>Length</b> <%= @mycode.bytesize %><br>
-<b>Author</b> <%= @mycode.speaker %><br>
-<b>Keywords</b> <%= @mycode.keywords %><br>
+<b>Keywords:</b> <%= @mycode.keywords %><br>
+<b>Author:</b> <%= @mycode.speaker %><br>
 </div>
