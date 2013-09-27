@@ -16,10 +16,3 @@
 .wrapped-text {
     white-space: pre-wrap;
 }
-
-#mybottomnav {
-	clear: both;
-	background-color: black;
-height: 70px;
-display: block;
-font-size: 16px;}
