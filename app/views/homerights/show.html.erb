@@ -43,24 +43,22 @@
 						<td colspan=\"2\">
 							&nbsp;</td>
 					</tr>
-					 END OF FEATURED SPECIAL ARTICLE //-->" %>
+					 END OF FEATURED SPECIAL ARTICLE //--></tbody></table>" %>
 					 <br />
 					 <br />
   <%=
-					"<tr>
-						<td colspan=\"2\">
-							<b><u>HIGHLIGHTS</u></b></td>
-					</tr>"  %>
+					"<div class=\"coverlines\"><!-- BEGIN COVERLINES DIV //-->
+"%><br> <br>
+				<%= "
+				<div style=\"padding-top:10px\"><b><u>HIGHLIGHTS</u></b></div>"  %>
 					
-<br />
 <br />
 
 <% @homeright.regulars.each do |regular| %>
-
-<%=  "<tr>
-						<td colspan=\"2\">
-							<img height=\"12\" src=\"/icons/misc/arrow_orange.gif\" width=\"14\" /> <a href=\"#{regular.link}\">#{regular.title}</a> <i>#{regular.author}</i></td>
-					</tr>" %>
+<br>
+<%=  "<div>
+							<img height=\"12\" src=\"/icons/misc/arrow_orange.gif\" width=\"14\" /> <a href=\"#{regular.link}\">#{regular.title}</a> <i>#{regular.author}</i></div>
+					" %>
 <br />
 
 
@@ -68,13 +66,9 @@
 
 <%= 
 
- 					"<tr>
-						<td colspan=\"2\">
-							&nbsp; <img height=\"12\" src=\"/site/misc/images/arrow_DARKblue.gif\" width=\"14\" /> <a href=\"#{editorial.edlink}\">Editorial:</a> <i>#{editorial.edauthor}</i></td>
-					</tr>" %>
+ 					"<div class=\"editorial\"><img height=\"12\" src=\"/site/misc/images/arrow_DARKblue.gif\" width=\"14\" /> <a href=\"#{editorial.edlink}\">Editorial:</a> <i>#{editorial.edauthor}</i></div>
+					" %>
 
-
-<br />
 <br />
 <% end %>
 <% end %>
