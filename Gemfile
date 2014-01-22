@@ -19,7 +19,7 @@ group :assets do
   #gem 'less-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
    gem 'uglifier', '>= 1.2.3'
-   gem 'therubyracer', '~> 0.10.2'
+   gem 'therubyracer'#, '~> 0.10.2' note: removed this on 1-22-14, hopefully wont mess up automation
   gem 'less-rails'
   gem "twitter-bootstrap-rails"
 end
