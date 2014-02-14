@@ -31,16 +31,15 @@
 					 <br />
 					 <br />
   <%=
-					"<div class=\"coverlines\"><!-- BEGIN COVERLINES DIV //--><ul>
+					"<div class=\"coverlines\"><!-- BEGIN COVERLINES DIV //-->
 "%>
-<br><br>
+<br><br><%="<ul>" %><br>
 <% @homeright.regulars.each do |regular| %>
 
 <%=  "<li>
 							<a href=\"#{regular.link}\">#{regular.title}</a> <i>#{regular.author}</i></li>
 					" %>
 <br />
-
 
 <% regular.editorials.each do |editorial| %>
 
@@ -54,7 +53,7 @@
 <% end %>
 <%= "</ul>" %>
 <br />
-
+<br>
 <%= render 'bottom_of_issue' %>
 
 <br />
