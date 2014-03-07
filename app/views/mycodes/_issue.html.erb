@@ -1,24 +1,25 @@
-<%= "
 
-       <tr>
-						<td rowspan=\"1\" valign=\"left\" width=\"63\">
-							<br />
-							<a href=\"/site/podcasts/index.xhtml\"><img src=\"/site/misc/images/jco-itunes-item-icon-sm.jpg\" /></a></td>
-						<td width=\"620\">
-							<br />
-							<strong>#{@mycode.podtitle}</strong><br />
-							<em>By #{@mycode.speaker}</em>&nbsp;<font size=\"1\"><strong> <a href=\"/site/podcasts/podcast-no-coi.xhtml\">[Disclosures]</a></strong></font><br />
-							Posted #{@mycode.date.strftime('%B %d, %Y')}</td>
-					</tr>
-					<tr>
-						<td colspan=\"2\">
-											
-#{@mycode.wimpy}
+<%="	<!-- If there are podcasts, use this -->
 
-</object> <br />
-							<sub>(<a href=\"#{@mycode.podlink}?web\">Download file</a> - duration #{@mycode.duration.strftime('%X')}, file size #{@mycode.mbsize} MB)</sub><br />
-							<br />
-							<b>#{@mycode.artauthor} <a href=\"#{@mycode.artlink}\">[Abstract]</a></b></td>
-					</tr>
+<div class=\"podcast_container\" style=\"border-bottom:none;\">
+					<div style=\"float:left;padding:2px 10px 0px 2px\">
+						<a href=\"/site/podcasts/index.xhtml\"><img src=\"/site/misc/images/jco-itunes-item-icon-sm.jpg\" /></a></div>
+					<div style=\"\">
 
-					"  %>
+
+					<strong>#{@mycode.podtitle}</strong><br />
+						<em>#{@mycode.speaker}</em>&nbsp;<font size=\"1\"> <a href=\"/site/podcasts/podcast-no-coi.xhtml\">[Disclosures]</a></font></div>
+					<div style=\"margin-top:-15px; text-align:center\">
+						#{@mycode.wimpy}
+
+</object>
+</div>
+					<div style=\"padding-bottom:5px\">
+						<sub>#{@mycode.date.strftime('%B %d, %Y')} (#{@mycode.duration.strftime('%X')}, #{@mycode.mbsize}MB) <a href=\"#{@mycode.podlink}\">download mp3</a></sub></div>
+					<div>
+						Related article: <b><a href=\"#{@mycode.artlink}\">#{@mycode.artauthor}</a></b></div>
+				</div></div>
+			
+			<!-- END FRAGMENT FOR ISSUES WITH PODCASTS --></div><!-->"
+
+%>
