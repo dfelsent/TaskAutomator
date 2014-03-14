@@ -4,7 +4,7 @@
 <div align="center">
 <b>Title:</b> <%= @mycode.podtitle %><br>
 <b>Description:</b> <%= @mycode.description %><br>
-<b>Link (to index):</b> http://jco.ascopubs.org/site/podcasts/index.xhtml<br>
+<b>Link:</b> <%= @mycode.podlink %>?mobile<br>
 <b>Pub Date:</b> <%= @mycode.date.strftime('%B %d, %Y') %><br>
 <b>Enclosure - URL:</b> <%= @mycode.podlink %>?mobile<br>
 <b>Enclosure - Length:</b> <%= @mycode.bytesize %><br>
