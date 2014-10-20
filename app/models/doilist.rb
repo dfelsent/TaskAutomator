@@ -36,7 +36,7 @@ class Doilist < ActiveRecord::Base
 
     mylistfinal.each do |doi|
       url ='http://submit.jco.org/tracking/msedit?msid=' + doi + '&roleName=staff_thirteen&msedit=prod_info&show_dates=true#prod_dates' 
-      page = agent.get("http://submit.jco.org/submission/queues")
+      #page = agent.get("http://submit.jco.org/submission/queues")
       page = agent.get("#{url}")
       #page.encoding = 'utf-8'
       entryform = page.form_with(:name => 'submitManuscript') 
