@@ -15,7 +15,7 @@ class Doilist < ActiveRecord::Base
   def scrape
 
     agent = Mechanize.new
-  
+     agent.cookie_jar.clear!
     page = agent.get('http://submit.jco.org/')
     page.encoding = 'utf-8'
     myform = page.form_with(:name => 'signinForm')
