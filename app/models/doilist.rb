@@ -15,7 +15,6 @@ class Doilist < ActiveRecord::Base
   def scrape
 
     agent = Mechanize.new
-     agent.cookie_jar.clear!
     page = agent.get('http://submit.jco.org/')
     page.encoding = 'utf-8'
     myform = page.form_with(:name => 'signinForm')
@@ -26,7 +25,6 @@ class Doilist < ActiveRecord::Base
     mypass_field.value = mypass 
 
     myform.checkbox_with(:name => 'remember_me').check
-    agent.cookie_jar.clear!
     page = agent.submit(myform, myform.buttons.first)
     page.encoding = 'utf-8'
     mylistnew = mylist.encode('UTF-16le', :invalid => :replace, :replace => '').encode('UTF-8')
@@ -36,8 +34,7 @@ class Doilist < ActiveRecord::Base
 
     mylistfinal.each do |doi|
       url ='http://submit.jco.org/tracking/msedit?msid=' + doi + '&roleName=staff_thirteen&msedit=prod_info&show_dates=true#prod_dates' 
-      #page = agent.get("http://submit.jco.org/submission/queues")
-      agent.cookie_jar.clear!
+      page = agent.get("http://submit.jco.org/submission/queues")
       page = agent.get("#{url}")
       #page.encoding = 'utf-8'
       entryform = page.form_with(:name => 'submitManuscript') 
