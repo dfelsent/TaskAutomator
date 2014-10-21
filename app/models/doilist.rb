@@ -26,7 +26,7 @@ class Doilist < ActiveRecord::Base
     mypass_field.value = mypass 
 
     myform.checkbox_with(:name => 'remember_me').check
-  #  agent.cookie_jar.clear!
+    agent.cookie_jar.clear!
     page = agent.submit(myform, myform.buttons.first)
     page.encoding = 'utf-8'
     mylistnew = mylist.encode('UTF-16le', :invalid => :replace, :replace => '').encode('UTF-8')
