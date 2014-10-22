@@ -3,7 +3,7 @@ require 'delayed_job'
 class DoilistsController < ApplicationController
   # GET /doilists
   # GET /doilists.json
-
+  http_basic_authenticate_with name: "asco", password: "jcojop"
 
   # GET /doilists/1
   # GET /doilists/1.json
