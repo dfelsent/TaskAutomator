@@ -29,6 +29,8 @@ end
 gem 'jquery-rails', '2.0.2'
 
 gem 'mechanize'
+gem 'watir'
+gem 'watir-webdriver'
 
 group :production do
   gem 'pg', '0.12.2'

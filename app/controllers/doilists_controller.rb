@@ -28,6 +28,7 @@ class DoilistsController < ApplicationController
   
       if @doilist.save
         Delayed::Job.enqueue DoilistScrapeJob.new(@doilist.id)
+        #@doilist.scrape
         flash[:notice] = "Your entries have been sent."
         redirect_to start_index_path
       else
