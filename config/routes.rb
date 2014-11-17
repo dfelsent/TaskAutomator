@@ -4,6 +4,7 @@ Bptest::Application.routes.draw do
 
   resources :start
   resources :vols, :path => "VolumeIssue"
+  resources :vol_jops, :path => "VolumeIssueJOP"
   resources :doilists, :path => "EmbargoPaP"
   resources :mycodes, :path => "podcast"
   resources :homerights, :path => "homeright" do
