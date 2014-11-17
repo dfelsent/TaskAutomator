@@ -21,15 +21,15 @@
   </div>
   <div class="field">
     <%= f.label(:mylist, t('DOI list')) %><br />
-    <%= f.text_area :mylist, :placeholder => "Paste in the list of DOIs to be updated, in the format of \"JCO/2013/487777\". The items should be separated by spaces or new lines." %>
+    <%= f.text_area :mylist, :placeholder => "Paste in the list of DOIs to be updated, in the format of \"JOP/2014/001305\". The items should be separated by spaces or new lines." %>
 
   <div class="field">
     <%= f.label :volume %><br />
-    <%= f.number_field :volume, :placeholder => "ex: 31" %>
+    <%= f.number_field :volume, :placeholder => "ex: 10" %>
   </div>
   <div class="field">
     <%= f.label :issue %><br />
-    <%= f.number_field :issue, :placeholder => "ex: 12" %>
+    <%= f.number_field :issue, :placeholder => "ex: 6" %>
   </div>
   <div class="actions">
     <%= f.submit "Submit Your Entry to Benchpress", :class => 'btn btn-primary' %>
