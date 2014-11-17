@@ -22,14 +22,14 @@ mylistarray = mylist.strip.split(/[\s]+/)
 mylistfinal = mylistarray.map{|l| l}.uniq
 
 mylistfinal.each do |doi|
-    url ='http://submitjop.ascopubs.org/tracking/msedit?msid=' + doi + '&roleName=staff&msedit=prod_info'
+    url ='http://submitjop.ascopubs.org/tracking/msedit?msid=' + doi + '&roleName=staff_thirteen&msedit=prod_info'
     # page = a.get("http://submit.jco.org/submission/queues")
     # page = a.get("#{url}") 
     b.goto(url)
  
    # entryform = page.form_with(:name => 'submitManuscript') 
-	b.text_field(:name => 'assign_to_volume').set = volume
-	b.text_field(:name => 'assign_to_issue').set = issue
+	b.text_field(:name => 'assign_to_volume').set(volume)
+	b.text_field(:name => 'assign_to_issue').set(issue)
     #entryform.field_with(:name => 'assign_to_volume').value = volume
     #entryform.field_with(:name => 'assign_to_issue').value = issue
 

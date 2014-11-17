@@ -41,8 +41,8 @@ mylistfinal.each do |doi|
     b.goto(url)
  
    # entryform = page.form_with(:name => 'submitManuscript') 
-	b.text_field(:name => 'assign_to_volume').set = volume
-	b.text_field(:name => 'assign_to_issue').set = issue
+	b.text_field(:name => 'assign_to_volume').set(volume)
+	b.text_field(:name => 'assign_to_issue').set(issue)
     #entryform.field_with(:name => 'assign_to_volume').value = volume
     #entryform.field_with(:name => 'assign_to_issue').value = issue
 
