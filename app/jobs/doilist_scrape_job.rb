@@ -7,7 +7,11 @@ class DoilistScrapeJob < Struct.new(:doilist_id)
   end
 
   def max_attempts
-    return 2
+    return 1
   end
 
+  def failure(job)
+  	Doilist.destroy_all
+  end
+  
 end

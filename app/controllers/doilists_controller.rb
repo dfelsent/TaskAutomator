@@ -35,7 +35,6 @@ class DoilistsController < ApplicationController
         render :action => 'new'
         format.html { render action: "new" }
         format.json { render json: @doilist.errors, status: :unprocessable_entity }
-
       end
     end
 

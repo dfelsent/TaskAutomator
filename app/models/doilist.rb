@@ -12,6 +12,7 @@ class Doilist < ActiveRecord::Base
 		validates :myyear, :presence => true, :numericality => true
 		validates :mylist, :presence => true
 
+
   def scrape
 
     b = Watir::Browser.new :phantomjs
@@ -68,5 +69,6 @@ class Doilist < ActiveRecord::Base
       #sleep 2
     end  
   end
+
 
 end

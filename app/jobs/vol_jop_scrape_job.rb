@@ -7,7 +7,11 @@ class VolJopScrapeJob < Struct.new(:vol_jop_id)
   end
 
   def max_attempts
-    return 2
+    return 1
+  end
+
+   def failure(job)
+  	VolJop.destroy_all
   end
 
 end

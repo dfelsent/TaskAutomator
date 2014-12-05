@@ -8,6 +8,7 @@ validates :mylist, :presence => true
 validates :volume, :presence => true, :numericality => true
 validates :issue, :presence => true,:numericality => true
 
+
 def scrape
   
     b = Watir::Browser.new :phantomjs
@@ -51,6 +52,7 @@ mylistfinal.each do |doi|
 end
 
 end 
+
 
 end
 
