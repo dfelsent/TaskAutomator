@@ -17,7 +17,7 @@
 
             <br />
             <br />
-            <sup>(<a href=\"#{@mycode.podlink}?web\">Download file</a> - duration #{@mycode.duration.strftime('%X')}, file size #{@mycode.mbsize} MB)</sup></td>
+            <sup>(<a href=\"#{@mycode.podlink}?web\">Play/download file</a> - duration #{@mycode.duration.strftime('%M:%S')}, file size #{@mycode.mbsize.to_i} MB)</sup></td>
           <td>
             #{@mycode.artauthor} <a href=\"#{@mycode.artlink}\">[Abstract]</a></td>
         </tr>"     %> 

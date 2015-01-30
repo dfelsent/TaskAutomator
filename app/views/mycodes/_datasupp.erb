@@ -1,12 +1,8 @@
 <%= "
 
-<p>Copyright &#169; 2014 by the American Society of Clinical Oncology</p>
+<p>Copyright &#169; 2015 by the American Society of Clinical Oncology</p>
 
-<p>Users can play the podcast directly in the audio player embedded below. If 
-
-Flash is disabled on your browser, you can save the file directly to your computer 
-
-or open on your mobile device by clicking on  \"download file.\"  </p>
+<p>Users can play the podcast directly in the audio player embedded below. If Flash is disabled on your browser, you can save the file directly to your computer or open on your mobile device by clicking on  \"Play/download file.\"  </p>
 
 <p>
 <strong>#{@mycode.podtitle} 
@@ -19,6 +15,6 @@ or open on your mobile device by clicking on  \"download file.\"  </p>
 <br/>
 <br/>
 
-(<a href=\"#{@mycode.podlink}?web\">Download file </a> - duration #{@mycode.duration.strftime('%X')}, file size #{@mycode.mbsize} MB)
+(<a href=\"#{@mycode.podlink}?web\">Play/download file </a> - duration #{@mycode.duration.strftime('%M:%S')}, file size #{@mycode.mbsize.to_i} MB)
 
 <p>This podcast presenter indicated no conflicts of interest.</p>"       %> 

@@ -1,9 +1,9 @@
 <div align="center">
 
-  <strong>Web:</strong> <%= "http://jco.ascopubs.org/site/podcasts/audio/#{@mycode.date.strftime('%Y')}/jcopodcast-#{@mycode.date.strftime('%m-%d-%Y')}.mp3?web" %><br>
+ 
 
-   <strong>Mobile:</strong> <%= "http://jco.ascopubs.org/site/podcasts/audio/#{@mycode.date.strftime('%Y')}/jcopodcast-#{@mycode.date.strftime('%m-%d-%Y')}.mp3?mobile" %><br>
-
-     <strong>Non-query link:</strong> <%= "http://jco.ascopubs.org/site/podcasts/audio/#{@mycode.date.strftime('%Y')}/jcopodcast-#{@mycode.date.strftime('%m-%d-%Y')}.mp3" %>
+     
+     <strong>Provided URL:</strong> <%= @mycode.podlink %><br>
+     <strong>Generated URL by date:</strong> <%= "http://jco.ascopubs.org/site/podcasts/audio/#{@mycode.date.strftime('%Y')}/jcopodcast-#{@mycode.date.strftime('%m-%d-%Y')}.mp3" %><br>
 
 </div>

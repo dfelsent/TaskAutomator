@@ -1,0 +1,12 @@
+
+
+
+<div align="center">
+<b>Title:</b> <%= @mycode.podtitle %><br>
+<b>Subtitle:</b> <%= @mycode.podtitle %><br>
+<b>Description:</b> <%= @mycode.description %><br>
+<b>Permalink Points to:</b> Master Media File URL<br>
+<b>Keywords:</b> <%= @mycode.keywords %><br>
+<b>Advanced Options -> Extra Tags:</b> <%= %Q|<itunes:author>| %><%= @mycode.speaker %><%= %Q|</itunes:author>| %><br>
+<b>Release Date:</b> <%= @mycode.date.strftime('%B %d, %Y') %> at 4:00 PM ET<br>
+</div>

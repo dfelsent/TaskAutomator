@@ -14,7 +14,7 @@
 </object>
 </div>
 					<div style=\"padding-bottom:5px\">
-						<sub>#{@mycode.date.strftime('%B %d, %Y')} (#{@mycode.duration.strftime('%X')}, #{@mycode.mbsize}MB) <a href=\"#{@mycode.podlink}\">download mp3</a></sub></div>
+						<sub>#{@mycode.date.strftime('%B %d, %Y')} (#{@mycode.duration.strftime('%M:%S')}, #{@mycode.mbsize.to_i} MB) <a href=\"#{@mycode.podlink}\">play/download mp3</a></sub></div>
 					<div>
 						Related article: <b><a href=\"#{@mycode.artlink}\">#{@mycode.artauthor}</a></b></div>
 				</div>
