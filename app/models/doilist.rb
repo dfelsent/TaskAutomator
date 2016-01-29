@@ -37,7 +37,7 @@ class Doilist < ActiveRecord::Base
    # mylistnew = mylist.encode('UTF-16le', :invalid => :replace, :replace => '').encode('UTF-8')
     mylistarray = mylist.strip.split(/[\s]+/)
 
-    mylistfinal = mylistarray.map{|l| l[0..-5].sub(/(.*)\./,'\1').gsub('.','/')}.uniq
+    mylistfinal = mylistarray.map{|l| l[8..-1].sub(/(.*)\./,'\1').gsub('.','/')}.uniq
 
     mylistfinal.each do |doi|
       url ='http://submit.jco.org/tracking/msedit?msid=' + doi + '&roleName=staff_thirteen&msedit=prod_info&show_dates=true#prod_dates' 
