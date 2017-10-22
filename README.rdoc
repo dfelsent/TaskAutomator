@@ -1,5 +1,5 @@
 == About
 
-This app automates 7 routine office talks relating to online form-filling, HTML code generation, and content QC checking. Configuration should vary based on a particular office's needs. This has the potential to save hundreds of stafftime per year. 
+This app automates 7 routine office talks relating to online form-filling, HTML code generation, and content QC checking. Configuration should vary based on a particular office's needs. This has the potential to save hundreds of hours of staff time per year. 
 
 This app was built from scratch by @dfelsent.
