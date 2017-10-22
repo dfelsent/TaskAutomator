@@ -42,8 +42,6 @@ gem 'unicorn'
 
 gem 'newrelic_rpm'
 
-#maybe add gem 'delayed_job' to see if it helps with the log?
-
 gem 'delayed_job'
 
 gem 'delayed_job_active_record'

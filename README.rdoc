@@ -1,3 +1,9 @@
+== About
+
+This is an app that automates 7 routine office tasks relating to online form-filling, HTML code generation, and content QC checks. It can potentially save hundreds of staff time per year.
+
+Below is some standard Ruby on Rails information.
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
