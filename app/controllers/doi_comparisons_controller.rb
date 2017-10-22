@@ -47,6 +47,15 @@ end
       end
     end
 
+
+  #if cutHeatherArray == cutHwxArray
+   # flash[:notice] = "These are a match!"
+  #else
+  #  flash[:notice] = "There is a mismatch."
+  #end
+   # end
+  #end
+
   # PUT /doi_comparisons/1
   # PUT /doi_comparisons/1.json
   def update
@@ -54,7 +63,7 @@ end
 
     respond_to do |format|
       if @doi_comparison.update_attributes(params[:doi_comparison])
-        format.html { redirect_to @doi_comparison, notice: 'DOI comparison was successfully updated.' }
+        format.html { redirect_to @doi_comparison, notice: 'Doi comparison was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
